@@ -1,0 +1,226 @@
+#contact {
+    background: url('https://source.unsplash.com/1200x600/?workspace,tools') 
+                center/cover no-repeat;
+  }
+  
+/* ========== Global & Reset ========== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding-top: 60px; /* nav height */
+  background: #fafafa;
+  color: #333;
+}
+
+/* ========== Navigation ========== */
+nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  display: flex; justify-content: center;
+  z-index: 100;
+}
+nav ul {
+  list-style: none;
+  display: flex; gap: 1em;
+  padding: 0.75em;
+}
+nav a {
+  text-decoration: none; color: #555;
+  padding: 0.5em 0.75em;
+  transition: background 0.2s, color 0.2s;
+}
+nav a:hover {
+  background: #eee; color: #000;
+  border-radius: 4px;
+}
+
+/* ========== Buttons ========== */
+.btn {
+  display: inline-block;
+  background: #333;
+  color: #fff;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+.btn:hover { background: #555; }
+
+/* ========== Section Base ========== */
+main, header {
+  max-width: 960px;
+  margin: auto;
+  padding: 2em 1em;
+}
+h1, h2 { margin-bottom: 0.5em; text-align: center; }
+p { margin-bottom: 1em; }
+
+/* ========== Home Hero ========== */
+header.hero {
+  position: relative;
+  text-align: center;
+  color: #fff;
+}
+header.hero img {
+  width: 100%; height: auto;
+  filter: brightness(0.6);
+}
+header.hero .hero-text {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+header.hero h1 { font-size: 2.5em; }
+header.hero p { font-size: 1.2em; margin: 0.5em 0; }
+
+/* ========== Shop Grid ========== */
+.shop-items {
+  display: flex; flex-wrap: wrap; gap: 1em;
+  justify-content: center;
+}
+.shop-item {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  width: calc(33% - 1em);
+  text-align: center;
+  padding: 1em;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.shop-item img {
+  width: 100%; height: auto;
+  border-radius: 4px;
+}
+.shop-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.shop-item h3 { margin: 0.75em 0 0.25em; }
+.shop-item .price { color: #b12704; font-weight: bold; }
+
+/* ========== About ========== */
+.about-content {
+  display: flex; flex-wrap: wrap; gap: 1em;
+  align-items: center;
+}
+.about-content img {
+  flex: 1 1 300px;
+  width: 100%; border-radius: 8px;
+}
+.about-content div {
+  flex: 1 1 300px;
+}
+
+/* ========== Lookbook Gallery ========== */
+.gallery {
+  display: flex; flex-wrap: wrap; gap: 0.5em;
+  justify-content: center;
+}
+.gallery img {
+  width: calc(25% - 0.5em);
+  border-radius: 4px;
+}
+
+/* ========== Workshops List ========== */
+.events-list {
+  list-style: none;
+  max-width: 600px;
+  margin: auto;
+}
+.events-list li {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
+/* ========== Contact Form & FAQ ========== */
+.contact-container {
+  display: flex; flex-wrap: wrap; gap: 2em;
+}
+.contact-form, .faq {
+  flex: 1 1 300px;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.faq p { margin-bottom: 1em; }
+
+/* ========== Footer ========== */
+footer {
+  text-align: center;
+  padding: 1em 0;
+  font-size: 0.9em;
+  color: #777;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+  .shop-item { width: calc(45% - 1em); }
+  .gallery img { width: calc(50% - 0.5em); }
+}
+@media (max-width: 600px) {
+  .shop-item, .gallery img { width: 100%; }
+  .about-content { flex-direction: column; }
+  .contact-container { flex-direction: column; }
+  nav ul { flex-direction: column; gap: 0.5em; }
+}
+
+/* make sure nav sits above the hero */
+nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 10;
+    /* …your existing nav styles… */
+  }
+  
+  /* Hero background + overlay */
+  header.hero {
+    position: relative;
+    width: 100%;
+    height: 80vh;              /* adjust height as you like */
+    min-height: 400px;         /* won’t shrink below 400px */
+    background:
+      linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+      url('image.png') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Centered white text/button */
+  header.hero .hero-text {
+    text-align: center;
+    color: #fff;
+    padding: 0 1rem;
+    max-width: 600px;
+  }
+  
+  header.hero .hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  header.hero .hero-text p {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* ensure page content starts below the fixed nav */
+  body {
+    padding-top: 60px;  /* or whatever your nav height is */
+  }
+  
+.potray{
+    height: 400px;
+    width: 200px;
+}
+
